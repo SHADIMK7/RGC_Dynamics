@@ -5,5 +5,5 @@ from api_app import views
 
 urlpatterns = [
     path('',views.simple_details,name='simple_details'),
-    path('employeedetails/<int:id>',views.employeedetails,name='employeedetails')
+    path('employeedetails/<int:id>/',views.employeedetails,name='employeedetails')
 ]
