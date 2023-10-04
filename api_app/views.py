@@ -52,15 +52,15 @@ advanced_detail = [
 
 @csrf_exempt
 def employeedetails(request, id):
-
-    global item
+    employee = None
     for item in advanced_detail:
         if item['id'] == id:
+            employee = item
             break
 
-    if item:
+    if employee:
         # Return the entire employee dictionary as JSON
-        return JsonResponse(item)
+        return JsonResponse(employee)
     else:
         return HttpResponse('Employee not found', status=404)
 
